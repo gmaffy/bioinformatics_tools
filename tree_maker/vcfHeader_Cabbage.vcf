@@ -1,0 +1,18 @@
+##fileformat=VCFv4.2
+##ALT=<ID=NON_REF,Description="Represents any possible alternative allele at this location">
+##FILTER=<ID=LowQual,Description="Low quality">
+##FILTER=<ID=PASS,Description="All filters passed">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=SB,Number=4,Type=Integer,Description="Per-sample component statistics which comprise the Fisher's Exact Test to detect strand bias.">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##contig=<ID=C01,length=38761720>
+##contig=<ID=C02,length=44046003>
+##contig=<ID=C03,length=57781463>
+##contig=<ID=C04,length=40895475>
+##contig=<ID=C05,length=32828328>
+##contig=<ID=C06,length=40704471>
+##contig=<ID=C07,length=48346208>
+##contig=<ID=C08,length=41516064>
+##contig=<ID=C09,length=40126856>
+##reference=file:////mnt/f/Crops/Cabbage/0960PIP1/Boleraceacapitata/v1.0/assembly/Boleraceacapitata_446_v1.0.fa

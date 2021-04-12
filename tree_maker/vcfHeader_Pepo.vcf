@@ -1,0 +1,30 @@
+##fileformat=VCFv4.2
+##ALT=<ID=NON_REF,Description="Represents any possible alternative allele at this location">
+##FILTER=<ID=LowQual,Description="Low quality">
+##FILTER=<ID=PASS,Description="All filters passed">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=SB,Number=4,Type=Integer,Description="Per-sample component statistics which comprise the Fisher's Exact Test to detect strand bias.">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##contig=<ID=Cp4.1LG01,length=21320769>
+##contig=<ID=Cp4.1LG02,length=14376414>
+##contig=<ID=Cp4.1LG03,length=13772414>
+##contig=<ID=Cp4.1LG04,length=12709140>
+##contig=<ID=Cp4.1LG05,length=10865678>
+##contig=<ID=Cp4.1LG06,length=10677745>
+##contig=<ID=Cp4.1LG07,length=10147556>
+##contig=<ID=Cp4.1LG08,length=10059303>
+##contig=<ID=Cp4.1LG09,length=9920322>
+##contig=<ID=Cp4.1LG10,length=9835092>
+##contig=<ID=Cp4.1LG11,length=9833969>
+##contig=<ID=Cp4.1LG12,length=9824194>
+##contig=<ID=Cp4.1LG13,length=9354089>
+##contig=<ID=Cp4.1LG14,length=8955933>
+##contig=<ID=Cp4.1LG15,length=8816444>
+##contig=<ID=Cp4.1LG16,length=8691934>
+##contig=<ID=Cp4.1LG17,length=8680504>
+##contig=<ID=Cp4.1LG18,length=8333454>
+##contig=<ID=Cp4.1LG19,length=8246682>
+##contig=<ID=Cp4.1LG20,length=8120804>
+##contig=<ID=Cp4.1LG00,length=50837395>
+##reference=file:///mnt/f/Crops/Squash/Genomes/CPepo/v4.1NEW/Cpepp_v4.1.chr.fa

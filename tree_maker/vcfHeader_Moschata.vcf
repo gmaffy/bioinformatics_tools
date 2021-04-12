@@ -1,0 +1,30 @@
+##fileformat=VCFv4.2
+##ALT=<ID=NON_REF,Description="Represents any possible alternative allele at this location">
+##FILTER=<ID=LowQual,Description="Low quality">
+##FILTER=<ID=PASS,Description="All filters passed">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=SB,Number=4,Type=Integer,Description="Per-sample component statistics which comprise the Fisher's Exact Test to detect strand bias.">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##contig=<ID=Cmo_Chr01,length=14627692>
+##contig=<ID=Cmo_Chr02,length=10523820>
+##contig=<ID=Cmo_Chr03,length=10828782>
+##contig=<ID=Cmo_Chr04,length=21859252>
+##contig=<ID=Cmo_Chr05,length=10947195>
+##contig=<ID=Cmo_Chr06,length=11971590>
+##contig=<ID=Cmo_Chr07,length=8233962>
+##contig=<ID=Cmo_Chr08,length=8001254>
+##contig=<ID=Cmo_Chr09,length=12190726>
+##contig=<ID=Cmo_Chr10,length=13139847>
+##contig=<ID=Cmo_Chr11,length=14005585>
+##contig=<ID=Cmo_Chr12,length=11750945>
+##contig=<ID=Cmo_Chr13,length=9526514>
+##contig=<ID=Cmo_Chr14,length=15889863>
+##contig=<ID=Cmo_Chr15,length=10349289>
+##contig=<ID=Cmo_Chr16,length=9515642>
+##contig=<ID=Cmo_Chr17,length=10763507>
+##contig=<ID=Cmo_Chr18,length=12921901>
+##contig=<ID=Cmo_Chr19,length=9753755>
+##contig=<ID=Cmo_Chr20,length=11800004>
+##contig=<ID=Cmo_Chr00,length=34820960>
+##reference=file:///mnt/f/Squash/Genomes/Moshata/v1/Cmoschata_v1.chr.fa
