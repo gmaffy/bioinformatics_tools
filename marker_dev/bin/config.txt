@@ -1,0 +1,36 @@
+#Reference:/mnt/f/FROME/Genomes/CPepo/v4.1NEW/Cpepp_v4.1.chr.fa
+#gff:/mnt/f/FROME/Genomes/CPepo/v4.1NEW/Cpepo_v4.1.gene.model.gff
+#proteins:/mnt/f/FROME/Genomes/CPepo/v4.1NEW/Cpepo_v4.1.protein.fa
+#==========List Read pairs below as follows #ReadPair:<path to fwd reads> <path to rev reads> <line name> ====#
+#ReadPair:
+#species: CPepo
+#OutputDir: /mnt/f/Squash/Pepo/GATK2/
+#============================= If you already have bam files: list them here (start with markDup pipeline)========================#
+#rawBam:
+#======================= If you already have marked Dup bam files (starts with bqsr pipeline) ===================#
+rgmdBam:
+#======================= If u already have recalibrated bams (start with jointVariantCaller) ====================================================#
+#bqsrBam:/mnt/f/FROME/Pepo/1/bams/SQM209_1.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/2/bams/SQM121_2.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/23/bams/SQ461_23.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/24-NA/bams/SQ462_24.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/25-NA/bams/SQ575_25.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/3/bams/SQ709_3.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/31/bams/SQM229_31.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/32-NA/bams/SQ596_32.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/33/bams/SQM029_33.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/34/bams/SQM014_34.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/35/bams/SQ377_35.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/4-NA/bams/ROCIO_SQ720_4.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/45-NA/bams/SQ811_45.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/46/bams/ALANIN_SQ711_46.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/47-NA/bams/SQM233_47.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/48/bams/SQM124_48.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/49/bams/SQM235_49.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/5/bams/DESERT_SQ738_5.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/50-NA/bams/SQM234_50.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/51-NA/bams/SQM168_51.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/52-NA/bams/SQM225_52.RGMD_bqsr2.bam
+#bqsrBam:/mnt/f/FROME/Pepo/6/bams/SQ696_6.RGMD_bqsr2.bam
+# ============================== Insert Path to dbSNP if available. NB! dbSNP must be derived from same Reference as the one being used here ===========#
+#dbSNP:
