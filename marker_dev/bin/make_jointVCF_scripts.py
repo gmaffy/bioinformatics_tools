@@ -1,8 +1,67 @@
+<<<<<<< HEAD
 import read_config
 import os
 
 def create_jointVCF_scripts(config):
     ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, dbSNP, chromList = read_config.readconfig(config)
+=======
+#import read_config
+import os,sys
+import sys
+import sys,os, subprocess
+from Bio import SeqIO
+
+def readconfig(config):
+    ref = ''
+    chrom = ''
+    outputdir =''
+    proteins = ''
+    gff = ""
+    species = ''
+    fwd = ""
+    rev = ""
+    rawbams = []
+    rgmdBam = []
+    bqsrBam = []
+    readPairs = []
+    with open(config) as f:
+        for line in f:
+            line = line.rstrip()
+            if line.startswith('Reference'):
+                ref = line.split(':')[1].strip()
+            elif line.startswith("gff"):
+                gff = line.split(':')[1].strip()
+            elif line.startswith('proteins'):
+                proteins = line.split(':')[1].strip()
+            elif line.startswith("OutputDir"):
+                outputdir = line.split(':')[1].strip()
+            elif line.startswith('species'):
+                species = line.split(':')[1].strip()
+            elif line.startswith("ReadPair"):
+                readPair = line.split(":")[1].strip().split()
+                readPairs.append(readPair)
+            elif line.startswith("rawBam"):
+                rawBam= line.split(":")[1].strip()
+                rawbams.append(rawBam)
+            elif line.startswith("rgmdBam"):
+                rgmd = line.split(":")[1].strip()
+                rgmdBam.append(rgmd)
+            elif line.startswith("bqsrBam"):
+                bqsr = line.split(":")[1].strip()
+                bqsrBam.append(bqsr)
+            elif line.startswith('dbSNP'):
+                dbSNP = line.split(":")[1].strip()
+
+            else:
+                continue
+    print('getting chrom list....')
+    chromList = [seq_record.id  for seq_record in SeqIO.parse(ref, "fasta")]
+    print('Chrom list done')
+    return ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, dbSNP, chromList
+
+def create_jointVCF_scripts(config):
+    ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, dbSNP, chromList = readconfig(config)
+>>>>>>> 192fc945f0adc6f573ce73870e5af954d9a6bc3d
     with open("hapCaller_parallel.sh", "w") as f, open('genomeImport_parralel.sh', 'w') as g, open('genotypeVCF_parallel.sh', 'w') as v:
         print('#!/bin/bash', file=f)
         print('#!/bin/bash', file=g)
@@ -42,7 +101,11 @@ def create_jointVCF_scripts(config):
                     if count%10 == 0 and count != 0:
                         vcommandslst.append('-V ' + outputdir + chromdir + '/gvcfs/' + bam.split('/')[-1].replace('bam','{}.g.vcf'.format(chromdir)) )
                         print('gatk HaplotypeCaller -R {0} -I {1} -L {2} -O {3} -ERC GVCF &'.format(ref,bam,chrom,outputdir + chromdir + '/gvcfs/' + bam.split('/')[-1].replace('bam','{}.g.vcf'.format(chromdir))), file=f)
+<<<<<<< HEAD
                         print('wait.. count is {}'.format(str(count)), file=f)
+=======
+                        print('wait', file=f)
+>>>>>>> 192fc945f0adc6f573ce73870e5af954d9a6bc3d
                         print('gatk HaplotypeCaller -R {0} -I {1} -L {2} -O {3} -ERC GVCF &'.format(ref,bam,chrom,outputdir + chromdir + '/gvcfs/' + bam.split('/')[-1].replace('bam','{}.g.vcf'.format(chromdir))) + '\n')
                     else:
                         
@@ -78,4 +141,9 @@ def create_jointVCF_scripts(config):
             #print("#---------------------------------------------------------------------------------\n\n", file=g)
             #print("#---------------------------------------------------------------------------------\n\n", file=v)
 
+<<<<<<< HEAD
 create_jointVCF_scripts('config.txt')
+=======
+config = sys.argv[1]
+create_jointVCF_scripts(config)
+>>>>>>> 192fc945f0adc6f573ce73870e5af954d9a6bc3d
