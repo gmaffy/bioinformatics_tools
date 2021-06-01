@@ -1,0 +1,23 @@
+Reference:/mnt/f/Crops/Beans/Pvulgaris/v2.1/assembly/Pvulgaris_442_v2.0.fa
+gff:/mnt/f/Crops/Beans/Pvulgaris/v2.1/annotation/Pvulgaris_442_v2.1.gene.gff3
+proteins:/mnt/f/Crops/Beans/Pvulgaris/v2.1/annotation/Pvulgaris_442_v2.1.protein.fa
+#==========List Read pairs below as follows #ReadPair:<path to fwd reads> <path to rev reads> <line name> ====#
+ReadPair:
+species: Beans
+OutputDir: /mnt/f/Crops/Beans/GATK
+#============================= If you already have bam files: list them here (start with markDup pipeline)========================#
+rawBam:
+#======================= If you already have marked Dup bam files (starts with bqsr pipeline) ===================#
+rgmdBam: /mnt/f/Crops/Beans/BAMS/165_SRR8935362.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/171_SRR8935359.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/173_SRR8935358.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/175_SRR8935366.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/177_SRR8935365.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/181_SRR8935368.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/185_SRR8935364.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/187_SRR8935363.RGMD.bam
+rgmdBam: /mnt/f/Crops/Beans/BAMS/191_SRR8935356.RGMD.bam
+#======================= If u already have recalibrated bams (start with jointVariantCaller) ====================================================#
+bqsrBam:
+# ============================== Insert Path to dbSNP if available. NB! dbSNP must be derived from same Reference as the one being used here ===========#
+dbSNP:

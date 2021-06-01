@@ -22,7 +22,7 @@ def code_genPos(crop):
     return code_pos
 
 def createIndividualVCF(concated_tab_delimited, crop_number):
-    crop_dic ={'1': "Cabbage", '2': 'Tomato', '3': "Moschata", '4': 'Pepo', '5': 'SweetCorn'}
+    crop_dic ={'1': "Cabbage", '2': 'Tomato', '3': "Moschata", '4': 'Pepo', '5': 'SweetCorn', '6': 'Onion'}
     crop = crop_dic[crop_number]
     code_pos_dic = code_genPos(crop)
     gen_pos_lst = []
@@ -35,7 +35,7 @@ def createIndividualVCF(concated_tab_delimited, crop_number):
     with open(concated_tab_delimited) as f:#, open(snpfile2) as f2, open(snpfile3) as f4:
         for line in f:
             line = line.rstrip().split('\t')
-            if line[0].startswith('Sample Name'):
+            if line[0].startswith('Sample_Name'):
                 print(line[2:])
                 gen_pos_lst =[code_pos_dic[codes] for codes in line[2:]]
                 print(gen_pos_lst)
@@ -67,7 +67,7 @@ def snpCallToGT(REF,ALT, CALL):
 if len(sys.argv) < 2 or sys.argv[1] == "--help":
     print()
     print('USAGE: python3 create_individual_vcf.py <Concatenated Tab Delimited File> <Crop number>\n')
-    print("Crop numbers:\n--------------------------------\n1. Cabbage\n2. Tomato\n3. Moschata\n4. Pepo\n5. SweetCorn\n-----------------------------------\n")
+    print("Crop numbers:\n--------------------------------\n1. Cabbage\n2. Tomato\n3. Moschata\n4. Pepo\n5. SweetCorn\n6. Onion\n-----------------------------------\n")
     print("Concatenated Tab Delimited File --- Tab delemited file containing all lines (rows) genotyped by n markers (columns)\n")
     print("OUTPUT --- VCF files for All lines in the concatenated delimited table!\n")
 
