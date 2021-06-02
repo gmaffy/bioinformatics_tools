@@ -12,7 +12,7 @@ then
     echo ""
 	echo "The output directory should NOT Exist"
     echo ""
-    printf "Crop numbers:\n--------------------------------\n1. Cabbage\n2. Tomato\n3. Moschata\n4. Pepo\n5. SweetCorn\n-----------------------------------\n"
+    printf "Crop numbers:\n--------------------------------\n1. Cabbage\n2. Tomato\n3. Moschata\n4. Pepo\n5. SweetCorn\n6. Onion\n-----------------------------------\n"
     echo ""
     echo "Output -- A Merged.vcf found in output dir. This will act input into tassel for phylogenetic tree drawing"
 else
