@@ -12,7 +12,9 @@ then
 else
     echo "Aligning starting..."
     rg="@RG ID:$LineName.1 PL:BGISEQ PU:STARKE01 LB:$species SM:$LineName CN:BGI"
-    bwa mem -t 10 -M -Y -R "$rg" $Reference $FwdReads $RevReads | samtools view -bhS - > $LineName.bam
+    echo "$rg"
+
+    bwa mem -t 10 -M -Y -R $(echo "@RG\tID:$LineName.1\tSM:$LineName\tLB:$species\tPL:BGISEQ") $Reference $FwdReads $RevReads | samtools view -bhS - > $LineName.bam
     
     samtools sort -@ 5 $LineName.bam -o $LineName.sort.bam
 
