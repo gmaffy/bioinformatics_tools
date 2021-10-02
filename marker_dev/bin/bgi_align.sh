@@ -11,7 +11,8 @@ then
 	echo "usage: bwaPepo.sh <Reference genome> <Forward Reads> <Reverse Reads> <Sample Name>"
 else
     echo "Aligning starting..."
-    bwa mem -t 10 -M -Y -R "@RG ID:$LineName.1 PL:BGISEQ PU:STARKE01 LB:$species SM:$LineName CN:BGI" $Reference $FwdReads $RevReads | samtools view -bhS - > $LineName.bam
+    echo "@RG ID:$LineName.1 PL:BGISEQ PU:STARKE01 LB:$species SM:$LineName CN:BGI"
+    bwa mem -t 10 -M -Y -R $(echo "@RG ID:$LineName.1 PL:BGISEQ PU:STARKE01 LB:$species SM:$LineName CN:BGI") $Reference $FwdReads $RevReads | samtools view -bhS - > $LineName.bam
     
     samtools sort -@ 5 $LineName.bam -o $LineName.sort.bam
 
