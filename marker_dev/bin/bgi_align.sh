@@ -8,7 +8,7 @@ species=$5
  
 if [ -z $Reference ];
 then
-	echo "usage: bwaPepo.sh <Reference genome> <Forward Reads> <Reverse Reads> <Sample Name>"
+	echo "usage: bgi_align.sh <Reference genome> <Forward Reads> <Reverse Reads> <Sample Name> <species>"
 else
     echo "Aligning starting..."
     rg="@RG ID:$LineName.1 PL:BGISEQ PU:STARKE01 LB:$species SM:$LineName CN:BGI"
