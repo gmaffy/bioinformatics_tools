@@ -1,4 +1,4 @@
-#import read_config
+q#import read_config
 import os,sys
 import sys
 import sys,os, subprocess
@@ -42,18 +42,17 @@ def readconfig(config):
             elif line.startswith("bqsrBam"):
                 bqsr = line.split(":")[1].strip()
                 bqsrBam.append(bqsr)
-            elif line.startswith('dbSNP'):
-                dbSNP = line.split(":")[1].strip()
+            
 
             else:
                 continue
     print('getting chrom list....')
     chromList = [seq_record.id  for seq_record in SeqIO.parse(ref, "fasta")]
     print('Chrom list done')
-    return ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, dbSNP, chromList
+    return ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, chromList
 
 def create_jointVCF_scripts(config):
-    ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, dbSNP, chromList = readconfig(config)
+    ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs,chromList = readconfig(config)
     with open("hapCaller_parallel.sh", "w") as f, open('genomeImport_parralel.sh', 'w') as g, open('genotypeVCF_parallel.sh', 'w') as v:
         print('#!/bin/bash', file=f)
         print('#!/bin/bash', file=g)
