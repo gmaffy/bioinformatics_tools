@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import read_config
-import os
-
-def create_jointVCF_scripts(config):
-    ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, dbSNP, chromList = read_config.readconfig(config)
-=======
 #import read_config
 import os,sys
 import sys
@@ -61,7 +54,6 @@ def readconfig(config):
 
 def create_jointVCF_scripts(config):
     ref, gff, proteins, outputdir, species,rawbams, rgmdBam, bqsrBam, readPairs, dbSNP, chromList = readconfig(config)
->>>>>>> 192fc945f0adc6f573ce73870e5af954d9a6bc3d
     with open("hapCaller_parallel.sh", "w") as f, open('genomeImport_parralel.sh', 'w') as g, open('genotypeVCF_parallel.sh', 'w') as v:
         print('#!/bin/bash', file=f)
         print('#!/bin/bash', file=g)
@@ -101,11 +93,7 @@ def create_jointVCF_scripts(config):
                     if count%10 == 0 and count != 0:
                         vcommandslst.append('-V ' + outputdir + chromdir + '/gvcfs/' + bam.split('/')[-1].replace('bam','{}.g.vcf'.format(chromdir)) )
                         print('gatk HaplotypeCaller -R {0} -I {1} -L {2} -O {3} -ERC GVCF &'.format(ref,bam,chrom,outputdir + chromdir + '/gvcfs/' + bam.split('/')[-1].replace('bam','{}.g.vcf'.format(chromdir))), file=f)
-<<<<<<< HEAD
-                        print('wait.. count is {}'.format(str(count)), file=f)
-=======
                         print('wait', file=f)
->>>>>>> 192fc945f0adc6f573ce73870e5af954d9a6bc3d
                         print('gatk HaplotypeCaller -R {0} -I {1} -L {2} -O {3} -ERC GVCF &'.format(ref,bam,chrom,outputdir + chromdir + '/gvcfs/' + bam.split('/')[-1].replace('bam','{}.g.vcf'.format(chromdir))) + '\n')
                     else:
                         
@@ -141,9 +129,5 @@ def create_jointVCF_scripts(config):
             #print("#---------------------------------------------------------------------------------\n\n", file=g)
             #print("#---------------------------------------------------------------------------------\n\n", file=v)
 
-<<<<<<< HEAD
-create_jointVCF_scripts('config.txt')
-=======
 config = sys.argv[1]
 create_jointVCF_scripts(config)
->>>>>>> 192fc945f0adc6f573ce73870e5af954d9a6bc3d
