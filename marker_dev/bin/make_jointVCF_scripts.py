@@ -1,4 +1,4 @@
-q#import read_config
+#import read_config
 import os,sys
 import sys
 import sys,os, subprocess
